@@ -16,8 +16,8 @@
 #
 
 Name: cockpit-session-recording
-Version: 13
-Release: 3%{?dist}
+Version: 16
+Release: 1%{?dist}
 Summary: Cockpit Session Recording
 License: LGPL-2.1-or-later
 URL:     https://github.com/Scribery/%{name}
@@ -33,6 +33,7 @@ BuildRequires: libappstream-glib-devel
 %endif
 Requires: cockpit-system
 Requires: tlog
+Requires: sssd-proxy
 
 %description
 Cockpit module providing session recording configuration and playback.
@@ -51,6 +52,45 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/*
 %{_datadir}/metainfo/org.cockpit-project.session-recording.metainfo.xml
 
 %changelog
+* Thu Feb 8 2024 Justin Stephenson <jstephen@redhat.com> - 16-1
+- Rebase to upstream release 16
+- Config: Add sssd-proxy requirement
+- Commits from release 15
+- Config: Update to authselect with-tlog feature
+- stylelint: handle stylelint-scss deprecation
+- Add ruff configuration
+- package.json: drop flowtype plugin
+- package.json: drop po2json
+- package.json: document the required nodejs version
+- fmf: Plumb through $TEST_* variables for unexpected messages
+- tests: Use mc for testPlayBinary
+- package.json: drop deprecated eslint-plugin-standard
+- Revert "build: add support for /pybridge scenario"
+- Player: Stop making the Terminal object state
+- build.js: support flags
+- packaging: Update spec License: to SPDX format
+- build.js: Fix LINT env variable check
+- Tests: Allow charset journal messages
+- Update to the new root creation function
+- package.json: Bump stylelint to 15
+- test: add check for sssd config id_provider proxy
+- Tests: Allow invalid non-UTF8 journal messages
+- Add xterm-canvas-addon dependency for rendering
+- Minor Eslint fixes
+- Tests: Update data list to PF5 for testAppMenu
+- Update org.cockpit-project.session-recording.metainfo.xml
+- Makefile: bump our test/common dependency
+- patternfly-5-overrides should be auto-imported by the page.scss file
+- Drop obsolete pf-m-redhat-font class
+- Commits from release 14
+- Upgrade to PatternFly 5 Alpha
+- Makefile: Update Cockpit lib to da5abbb4245b0455cc8b610efe01e684
+- package.json: Pin down versions of @patternfly/react-{styles,icons}
+- Makefile: Update Cockpit lib to 947f1753867e3924b9617aaace936225
+- Makefile: Fix watch dependencies
+- Update release.yml
+- Automate the release process
+
 * Tue May 2 2023 Justin Stephenson <jstephen@redhat.com> - 13-1
 - Play after rewind in testFastforwardControls
 - Set TZ to avoid CI failures with testFilter* tests
