@@ -16,7 +16,7 @@
 #
 
 Name: cockpit-session-recording
-Version: 16
+Version: 17
 Release: 1%{?dist}
 Summary: Cockpit Session Recording
 License: LGPL-2.1-or-later
@@ -52,6 +52,16 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/*
 %{_datadir}/metainfo/org.cockpit-project.session-recording.metainfo.xml
 
 %changelog
+* Thu Nov 7 2024 Justin Stephenson <jstephen@redhat.com> - 17-1
+- Rebase to upstream release 17
+- Config: Use authselect enable-feature when possible
+- Test: Move from CDP to BiDi
+- Replace jQuery extend() with standard JS spread
+- Convert to TypeScript
+- Convert Application to a functional component
+- package.json: Drop date-fns
+- Various test fixes and build related fixes
+
 * Thu Feb 8 2024 Justin Stephenson <jstephen@redhat.com> - 16-1
 - Rebase to upstream release 16
 - Config: Add sssd-proxy requirement
