@@ -16,7 +16,7 @@
 #
 
 Name: cockpit-session-recording
-Version: 17
+Version: 20
 Release: 1%{?dist}
 Summary: Cockpit Session Recording
 License: LGPL-2.1-or-later
@@ -52,6 +52,9 @@ appstream-util validate-relax --nonet %{buildroot}%{_datadir}/metainfo/*
 %{_datadir}/metainfo/org.cockpit-project.session-recording.metainfo.xml
 
 %changelog
+* Fri Jun 13 2025 Justin Stephenson <jstephen@redhat.com> - 20-1
+- Rebase to upstream release 20
+
 * Thu Nov 7 2024 Justin Stephenson <jstephen@redhat.com> - 17-1
 - Rebase to upstream release 17
 - Config: Use authselect enable-feature when possible
